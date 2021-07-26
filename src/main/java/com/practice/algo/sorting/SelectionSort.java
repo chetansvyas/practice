@@ -1,6 +1,6 @@
 package com.practice.algo.sorting;
 
-public class BubbleSort implements Sortable {
+public class SelectionSort implements Sortable {
 
     @Override
     public int[] sort(int[] input) {
@@ -8,16 +8,11 @@ public class BubbleSort implements Sortable {
     }
 
     private int[] sortInput(int input[]){
-        for (int i=0;i<input.length-2;i++){
-            boolean isSwaped = false;
-            for (int j=0;j< input.length-1;j++){
-                if(input[j+1] < input[j]){
-                    swap(input,j+1,j);
-                    isSwaped = true;
+        for (int i=0;i<input.length-1;i++){
+            for (int j=i+1;j<=input.length-1;j++){
+                if(input[i] > input[j]){
+                    swap(input,i,j);
                 }
-            }
-            if(!isSwaped){
-                break;
             }
             print(input);
         }
